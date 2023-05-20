@@ -62,7 +62,7 @@ void TestOpencv::displayLiveView()
     /*capturePtr = new VideoCapture(0);
     framePtr   = new Mat();*/
 
-    //capturePtr->open(0);
+    capturePtr->open(0);
 
     //Disable continuous auto focus (on: 1, off: 0)
     capturePtr->set(CAP_PROP_AUTOFOCUS, 0);
@@ -104,8 +104,12 @@ void TestOpencv::displayLiveView()
 void TestOpencv::stopLiveView()
 {
     timerPtr->stop();
+
     //QMessageBox::information(this, "Live View", "Stop");
     ui->liveViewLineEdit->setText("Live View Status ==> Stopped");
+
+    disconnect(timerPtr, SIGNAL(timeout()), this, SLOT(nextFrame()));
+    capturePtr->release();
 
 } //end of function stopLiveView
 
