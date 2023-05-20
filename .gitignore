@@ -1,0 +1,14 @@
+# Compiled objects files
+*.o
+
+# Compiled static libraries
+*.a
+
+# Compiled dynamic libraries
+*.so
+
+# Compiled execution files
+*.exe
+
+# Build directories
+/build-TestOpencv-Desktop_Qt_5_14_2_GCC_64bit-Debug/
