@@ -128,10 +128,10 @@ void TestOpencv::nextFrame()
         Mat outputFrame(height, width, CV_8UC3);
 
         //toGrayImage(*framePtr, outputFrame, height, width);
-        toNegativeImage(*framePtr, outputFrame, height, width);
+        //toNegativeImage(*framePtr, outputFrame, height, width);
 
-        //qImage  = cvMat2QImage(*framePtr);
-        qImage  = cvMat2QImage(outputFrame);
+        qImage  = cvMat2QImage(*framePtr);
+        //qImage  = cvMat2QImage(outputFrame);
         qPixmap = QPixmap::fromImage(qImage);
 
         qPixmap = qPixmap.scaled(ui->liveViewLabel->width(), ui->liveViewLabel->height(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
